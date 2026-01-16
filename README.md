@@ -65,4 +65,4 @@ Os dados dos membros estão definidos diretamente no código PHP do plugin, pode
 
 ## Autor
 
-Marco Antonio Vivas
+Marco Antônio Vivas
