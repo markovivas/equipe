@@ -8,19 +8,7 @@
  */
 
 register_activation_hook(__FILE__, function () {
-    $placeholder = [[
-        'nome' => '',
-        'secretaria' => 'SECOM',
-        'setor' => 'Comunicação',
-        'profissao' => 'Jornalista',
-        'funcao' => 'Chefe de Jornalista',
-        'foto' => '',
-        'contato' => ['email' => 'nome@dominio.com.br', 'telefone' => '(35) 91122-3344'],
-        'status' => '',
-        'localizacao' => 'Centro Administrativo',
-        'pais' => 'Brasil',
-    ]];
-    add_option('membros_empresa_data', $placeholder);
+    add_option('membros_empresa_data', []);
 });
 
 add_action('admin_menu', 'membros_admin_menu');
@@ -205,19 +193,19 @@ function membros_exibir_formulario($membro, $id) {
                 </tr>
                 <tr>
                     <th><label for="secretaria">Secretaria</label></th>
-                    <td><input type="text" id="secretaria" name="secretaria" value="<?php echo esc_attr($secretaria); ?>" class="regular-text"></td>
+                    <td><input type="text" id="secretaria" name="secretaria" value="<?php echo esc_attr($secretaria); ?>" class="regular-text" placeholder="Ex: SECOM"></td>
                 </tr>
                 <tr>
                     <th><label for="setor">Setor</label></th>
-                    <td><input type="text" id="setor" name="setor" value="<?php echo esc_attr($setor); ?>" class="regular-text"></td>
+                    <td><input type="text" id="setor" name="setor" value="<?php echo esc_attr($setor); ?>" class="regular-text" placeholder="Ex: Comunicação"></td>
                 </tr>
                 <tr>
                     <th><label for="profissao">Profissão</label></th>
-                    <td><input type="text" id="profissao" name="profissao" value="<?php echo esc_attr($profissao); ?>" class="regular-text"></td>
+                    <td><input type="text" id="profissao" name="profissao" value="<?php echo esc_attr($profissao); ?>" class="regular-text" placeholder="Ex: Jornalista"></td>
                 </tr>
                 <tr>
                     <th><label for="funcao">Função</label></th>
-                    <td><input type="text" id="funcao" name="funcao" value="<?php echo esc_attr($funcao); ?>" class="regular-text"></td>
+                    <td><input type="text" id="funcao" name="funcao" value="<?php echo esc_attr($funcao); ?>" class="regular-text" placeholder="Ex: Chefe de Jornalista"></td>
                 </tr>
                 <tr>
                     <th><label>Foto</label></th>
@@ -234,11 +222,11 @@ function membros_exibir_formulario($membro, $id) {
                 </tr>
                 <tr>
                     <th><label for="email">E-mail</label></th>
-                    <td><input type="email" id="email" name="email" value="<?php echo esc_attr($email); ?>" class="regular-text"></td>
+                    <td><input type="email" id="email" name="email" value="<?php echo esc_attr($email); ?>" class="regular-text" placeholder="Ex: nome@dominio.com.br"></td>
                 </tr>
                 <tr>
                     <th><label for="telefone">Telefone</label></th>
-                    <td><input type="text" id="telefone" name="telefone" value="<?php echo esc_attr($telefone); ?>" class="regular-text"></td>
+                    <td><input type="text" id="telefone" name="telefone" value="<?php echo esc_attr($telefone); ?>" class="regular-text" placeholder="Ex: (35) 91122-3344"></td>
                 </tr>
                 <tr>
                     <th><label for="status">Status</label></th>
@@ -252,11 +240,11 @@ function membros_exibir_formulario($membro, $id) {
                 </tr>
                 <tr>
                     <th><label for="localizacao">Localização</label></th>
-                    <td><input type="text" id="localizacao" name="localizacao" value="<?php echo esc_attr($localizacao); ?>" class="regular-text"></td>
+                    <td><input type="text" id="localizacao" name="localizacao" value="<?php echo esc_attr($localizacao); ?>" class="regular-text" placeholder="Ex: Centro Administrativo"></td>
                 </tr>
                 <tr>
                     <th><label for="pais">País</label></th>
-                    <td><input type="text" id="pais" name="pais" value="<?php echo esc_attr($pais); ?>" class="regular-text"></td>
+                    <td><input type="text" id="pais" name="pais" value="<?php echo esc_attr($pais); ?>" class="regular-text" placeholder="Ex: Brasil"></td>
                 </tr>
             </table>
             <p class="submit">
